@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 新增内容
+    'blog.apps.BlogConfig',
+    'config.apps.ConfigConfig',
+    'comment.apps.CommentConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,8 +80,12 @@ WSGI_APPLICATION = 'boke.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  # 修改为你的数据库引擎，例如 PostgreSQL
+        'NAME': 'boke',  # 数据库名称
+        'USER': 'root',  # 数据库用户名
+        'PASSWORD': '627627',  # 数据库密码
+        'HOST': 'localhost',  # 数据库主机地址
+        'PORT': '3306',  # 数据库端口
     }
 }
 
